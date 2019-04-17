@@ -2,11 +2,28 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <title>{% block title %}Blog Alphonse{% endblock %}</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% block stylesheets %}
+            <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+            <link href="{{ asset('libs/bootstrap/bootstrap.css') }}" type="text/css" rel="stylesheet">
+            <link href="{{ asset('libs/fontawesome/fontawesome.min.css') }}" type="text/css" rel="stylesheet">
+            <link href="{{ asset('libs/ionicons/ionicons.css') }}" type="text/css" rel="stylesheet">
+            <link href="{{ asset('css/common.css') }}" type="text/css" rel="stylesheet">
+            <link href="{{ asset('css/common-responsive.css') }}" type="text/css" rel="stylesheet">
+        {% endblock %}
     </head>
     <body>
+        {% block header %}{% include '/home/header.html.twig' %}{% endblock %}
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block footer %}{% include '/home/footer.html.twig' %}{% endblock %}
+        {% block javascripts %}
+            <script src="{{ asset('libs/jquery/jquery-3.1.1.min.js') }}"></script>
+            <script src="{{ asset('libs/tether/tether.min.js') }}"></script>
+            <script src="{{ asset('libs/bootstrap/bootstrap.js') }}"></script>
+            <script src="{{ asset('libs/swiper/swiper.js') }}"></script>
+            <script src="{{ asset('js/scripts-bona.js') }}"></script>
+        {% endblock %}
     </body>
 </html>
